@@ -70,9 +70,9 @@ export default {
 | -------------- | --------------------------------- | ------------------------ |
 | current-change | triggers when page number changed | Function(currentPage) {} |
 
-Full code.
-
 ## Example
+
+Full code.
 
 ```html
 <script>
