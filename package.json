@@ -1,13 +1,38 @@
 {
   "name": "vs-pagination",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.0.1",
+  "description": "A Vue Simple Pagination without total (reduce backend every page count sql).",
+  "main": "dist/vs-pagination.umd.min.js",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --target lib --name vs-pagination src/components/VsPaginatin.vue",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
+  "files": [
+    "dist/vs-pagination.common.js",
+    "dist/vs-pagination.common.js.map",
+    "dist/vs-pagination.umd.js",
+    "dist/vs-pagination.umd.js.map",
+    "dist/vs-pagination.umd.min.js",
+    "vs-pagination.umd.min.js.map"
+  ],
+  "keywords": [
+    "vue",
+    "component",
+    "vue component",
+    "pagination"
+  ],
+  "author": "vincentw",
+  "homepage": "https://github.com/kingzez/vs-pagination",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kingzez/vs-pagination.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kingzez/vs-pagination/issues"
+  },
+  "license": "MIT",
   "dependencies": {
     "core-js": "^3.6.5",
     "vue": "^2.6.11"

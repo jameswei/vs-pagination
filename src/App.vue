@@ -1,19 +1,43 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <vs-pagination
+      :page-no="pageNo"
+      :page-size="pageSize"
+      :current-page-length="list.length"
+      @current-change="onPageChanged"
+    />
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
+import VsPagination from './components/VsPaginatin'
 export default {
-  name: "App",
+  name: 'App',
   components: {
-    HelloWorld
+    VsPagination
+  },
+  data() {
+    return {
+      pageNo: 1,
+      pageSize: 20,
+      list: []
+    }
+  },
+  created() {
+    this.fetchList()
+  },
+  methods: {
+    async fetchList() {
+      this.list = await fetch(
+        `https://www.yuque.com/api/explore/recommends?limit=${this.pageSize}&page=${this.pageNo}&type=Doc`
+      ).then(res => res.json())
+    },
+    onPageChanged(currentPage) {
+      this.pageNo = currentPage
+      this.fetchList()
+    }
   }
-};
+}
 </script>
 
 <style lang="less">

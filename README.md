@@ -1,29 +1,98 @@
 # vs-pagination
 
-## Project setup
-```
-npm install
+A Vue Simple Pagination without total (reduce backend every page count sql).
+
+![](screenshot.gif)
+
+## Installation
+
+```bash
+npm install vs-pagination -S
+# or with yarn
+yarn add vs-pagination
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
+## Usage
+
+Import component.
+
+```js
+import VsPagination from 'vs-pagination'
+
+export default {
+  components: {
+    VsPagination
+  }
+}
 ```
 
-### Compiles and minifies for production
-```
-npm run build
+In template.
+
+```html
+<vs-pagination
+  :page-no="pageNo"
+  :page-size="pageSize"
+  :current-page-length="list.length"
+  @current-change="onPageChanged"
+/>
 ```
 
-### Run your unit tests
-```
-npm run test:unit
+Set pagination data
+
+```js
+export default {
+  components: {
+    VsPagination
+  },
+  data() {
+    return {
+      pageNo: 1,
+      pageSize: 20,
+      list: []
+    }
+  }
+}
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
+## API
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+| Attribute           | Effect                   | Type   | Require | Default |
+| ------------------- | ------------------------ | ------ | ------- | ------- |
+| page-no             | page number              | Number | Yes     | -       |
+| page-size           | page size                | Number | Yes     | -       |
+| current-page-length | current page list length | Number | Yes     | -       |
+
+| Method         | Effect                            | Parameters               |
+| -------------- | --------------------------------- | ------------------------ |
+| current-change | triggers when page number changed | Function(currentPage) {} |
+
+Full code.
+
+## Example
+
+```html
+<script>
+  import VsPagination from 'vs-pagination'
+
+  export default {
+    name: 'App',
+    components: {
+      VsPagination
+    },
+    data() {
+      return {
+        pageNo: 1,
+        pageSize: 20,
+        list: []
+      }
+    },
+    methods: {
+      async fetchList() {},
+      onPageChanged(currentPage) {
+        this.pageNo = currentPage
+        this.fetchList()
+      }
+    }
+  }
+</script>
+```
