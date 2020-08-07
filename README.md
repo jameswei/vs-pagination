@@ -56,11 +56,15 @@ export default {
 
 ## API
 
+### Attributes
+
 | Attribute           | Effect                   | Type   | Require | Default |
 | ------------------- | ------------------------ | ------ | ------- | ------- |
 | page-no             | page number              | Number | Yes     | -       |
 | page-size           | page size                | Number | Yes     | -       |
 | current-page-length | current page list length | Number | Yes     | -       |
+
+### Methods
 
 | Method         | Effect                            | Parameters               |
 | -------------- | --------------------------------- | ------------------------ |
