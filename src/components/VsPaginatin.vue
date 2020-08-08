@@ -2,13 +2,15 @@
   <div class="pagination">
     <div
       class="button prev"
-      :class="{ disabled: isFirstPage }"
+      :class="[size ? size : '', { disabled: isFirstPage }]"
       @click="prev"
     ></div>
-    <div class="button pager">{{ pageNo }}</div>
+    <div class="button pager" :class="[size ? size : '']" :style="cssVars">
+      {{ pageNo }}
+    </div>
     <div
       class="button next"
-      :class="{ disabled: isLastPage }"
+      :class="[size ? size : '', { disabled: isLastPage }]"
       @click="next"
     ></div>
   </div>
@@ -16,6 +18,14 @@
 <script>
 export default {
   props: {
+    size: {
+      type: String,
+      default: 'small'
+    },
+    color: {
+      type: String,
+      default: '#1890ff'
+    },
     pageNo: {
       type: Number,
       default: 1
@@ -35,18 +45,21 @@ export default {
     },
     isLastPage() {
       return this.currentPageLength < this.pageSize
+    },
+    cssVars() {
+      return {
+        '--vs-pagination-bg-color': this.color
+      }
     }
   },
   methods: {
     prev() {
       if (this.isFirstPage) return
-      const page = this.pageNo - 1
-      this.emit(page)
+      this.emit(this.pageNo - 1)
     },
     next() {
       if (this.isLastPage) return
-      const page = this.pageNo + 1
-      this.emit(page)
+      this.emit(this.pageNo + 1)
     },
     emit(page) {
       this.$emit('click', page)
@@ -65,16 +78,26 @@ export default {
     border-color: transparent;
     color: #606266;
     padding: 0;
-    font-size: 12px;
-    line-height: 20px;
-    height: 22px;
-    border-radius: 3px;
-    margin: 0 3px;
-    min-width: 22px;
     text-align: center;
   }
+  .small {
+    font-size: 12px;
+    line-height: 22px;
+    height: 22px;
+    min-width: 22px;
+    border-radius: 3px;
+    margin: 0 3px;
+  }
+  .large {
+    font-size: 13px;
+    height: 28px;
+    line-height: 28px;
+    min-width: 30px;
+    border-radius: 2px;
+    margin: 0 5px;
+  }
   .pager {
-    background-color: #1890ff;
+    background-color: var(--vs-pagination-bg-color);
     color: #ffffff;
   }
   .prev,

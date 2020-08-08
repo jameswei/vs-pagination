@@ -10,10 +10,6 @@
     "lint": "vue-cli-service lint"
   },
   "files": [
-    "dist/vs-pagination.common.js",
-    "dist/vs-pagination.common.js.map",
-    "dist/vs-pagination.umd.js",
-    "dist/vs-pagination.umd.js.map",
     "dist/vs-pagination.umd.min.js",
     "vs-pagination.umd.min.js.map"
   ],
@@ -23,7 +19,7 @@
     "vue component",
     "pagination"
   ],
-  "author": "vincentw",
+  "author": "Vincent W",
   "homepage": "https://github.com/kingzez/vs-pagination",
   "repository": {
     "type": "git",

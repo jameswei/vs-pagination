@@ -28,9 +28,9 @@ export default {
   },
   methods: {
     async fetchList() {
-      this.list = await fetch(
-        `https://www.yuque.com/api/explore/recommends?limit=${this.pageSize}&page=${this.pageNo}&type=Doc`
-      ).then(res => res.json())
+      // this.list = await fetch(
+      //   `https://www.yuque.com/api/explore/recommends?limit=${this.pageSize}&page=${this.pageNo}&type=Doc`
+      // ).then(res => res.json())
     },
     onPageChanged(currentPage) {
       this.pageNo = currentPage

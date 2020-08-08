@@ -59,11 +59,13 @@ export default {
 
 ### Attributes
 
-| Attribute           | Effect                   | Type   | Require | Default |
-| ------------------- | ------------------------ | ------ | ------- | ------- |
-| page-no             | page number              | Number | Yes     | -       |
-| page-size           | page size                | Number | Yes     | -       |
-| current-page-length | current page list length | Number | Yes     | -       |
+| Attribute           | Effect                   | Type   | Require | Default                                |
+| ------------------- | ------------------------ | ------ | ------- | -------------------------------------- |
+| page-no             | page number              | Number | Yes     | -                                      |
+| page-size           | page size                | Number | Yes     | -                                      |
+| current-page-length | current page list length | Number | Yes     | -                                      |
+| size                | current page list length | String | No      | small (accepted values: small / large) |
+| color               | current page list length | String | No      | #1890ff (blue)                         |
 
 ### Methods
 
