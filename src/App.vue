@@ -3,6 +3,8 @@
     <vs-pagination
       :page-no="pageNo"
       :page-size="pageSize"
+      color="#3FB07B"
+      size="large"
       :current-page-length="list.length"
       @current-change="onPageChanged"
     />
