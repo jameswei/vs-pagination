@@ -64,8 +64,8 @@ export default {
 | page-no             | page number              | Number | Yes     | -                                      |
 | page-size           | page size                | Number | Yes     | -                                      |
 | current-page-length | current page list length | Number | Yes     | -                                      |
-| size                | current page list length | String | No      | small (accepted values: small / large) |
-| color               | current page list length | String | No      | #1890ff (blue)                         |
+| size                | paginator size           | String | No      | small (accepted values: small / large) |
+| color               | paginator color          | String | No      | #1890ff (blue)                         |
 
 ### Methods
 
