@@ -12,12 +12,12 @@
 </template>
 
 <script>
-import VsPagination from './components/VsPaginatin'
+// import VsPagination from './components/VsPaginatin'
 export default {
   name: 'App',
-  components: {
-    VsPagination
-  },
+  // components: {
+  //   VsPagination
+  // },
   data() {
     return {
       pageNo: 1,

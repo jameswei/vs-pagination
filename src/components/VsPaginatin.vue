@@ -17,6 +17,7 @@
 </template>
 <script>
 export default {
+  name: 'VsPagination',
   props: {
     size: {
       type: String,
