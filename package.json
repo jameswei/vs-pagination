@@ -1,6 +1,6 @@
 {
   "name": "vs-pagination",
-  "version": "0.2.2",
+  "version": "1.0.0",
   "description": "A Vue Simple Pagination without total (reduce backend every page count sql).",
   "main": "dist/vs-pagination.common.js",
   "jsdelivr": "dist/vs-pagination.umd.min.js",
